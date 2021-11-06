@@ -1,6 +1,7 @@
 {
     "manifest_version": 2,
     "name": "otoran inline player",
+    "description": "otoran内で動画を再生できるようにします。別途 https://greasyfork.org/ja/scripts/435038-embed-nicovideo-jp-1080p-support をインストールするとページ内からいいねもできるようになります。",
     "version": "1.0.0",
     "permissions": [
         "https://otoran.vercel.app/*",

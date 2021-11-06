@@ -9,7 +9,7 @@ browser.runtime.onMessage.addListener(async message => {
         const r = await fetch(`https://nvapi.nicovideo.jp/v1/users/me/likes/items?videoId=${message.like}`, {
             method: "POST",
             credentials: "include",
-            "headers": {
+            headers: {
                 "Origin": "https://www.nicovideo.jp",
                 "X-Request-With": "https://www.nicovideo.jp",
                 "X-Frontend-Id": "6",

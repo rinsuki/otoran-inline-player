@@ -5,11 +5,10 @@
     "permissions": [
         "https://otoran.vercel.app/*",
         "https://embed.nicovideo.jp/watch/*",
-        "https://nvapi.nicovideo.jp/*",
+        "https://nvapi.nicovideo.jp/v1/users/me/likes/items?*",
         "history",
         "webRequest",
-        "webRequestBlocking",
-        "cookies"
+        "webRequestBlocking"
     ],
     "content_scripts": [
         {

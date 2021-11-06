@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "otoran inline player",
+    "version": "1.0.0",
+    "permissions": [
+        "https://otoran.vercel.app/*",
+        "https://embed.nicovideo.jp/watch/*",
+        "https://nvapi.nicovideo.jp/*",
+        "history",
+        "webRequest",
+        "webRequestBlocking",
+        "cookies"
+    ],
+    "content_scripts": [
+        {
+            "js": ["otoran.content.js"],
+            "matches": ["https://otoran.vercel.app/*"]
+        },
+        {
+            "js": ["nicoembed.content.js"],
+            "matches": ["https://embed.nicovideo.jp/watch/*"],
+            "all_frames": true
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+}

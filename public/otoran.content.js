@@ -28,10 +28,22 @@
     body.appendChild(sidebar)
 
     // iframeを作る
+    const iframeWrapper = document.createElement("div")
+    iframeWrapper.style.position = "relative"
+    iframeWrapper.style.paddingBottom = "52px"
+    const videoDummy = document.createElement("video")
+    videoDummy.style.aspectRatio = "16 / 9"
+    videoDummy.style.zIndex = "-1"
+    videoDummy.style.width = "100%"
+    iframeWrapper.appendChild(videoDummy)
     const iframe = document.createElement("iframe")
     iframe.src = `data:text/html;charset=UTF-8,` + encodeURIComponent(`<body style="margin:0;display:flex;justify-content:center;color:#aaa;height:100vh;align-items:center;"><div>左から動画を選択するとここで再生されます</div></body>`)
-    iframe.style.aspectRatio = "16 / 9"
+    iframe.style.position = "absolute"
+    iframe.style.inset = "0"
     iframe.style.border = "0"
+    iframe.style.width = "100%"
+    iframe.style.height = "100%"
+    iframeWrapper.appendChild(iframe)
 
     // 詳細表示div
     const info = document.createElement("div")
@@ -56,7 +68,7 @@
     const infoDescription = document.createElement("div")
     info.append(infoLikeButton, infoTitle, infoDescription)
 
-    sidebar.append(iframe, info)
+    sidebar.append(iframeWrapper, info)
 
     // リンクを踏んだらiframeで開いてwww版を踏んだことにする
     newBody.addEventListener("click", e => {
